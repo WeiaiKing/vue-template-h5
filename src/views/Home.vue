@@ -1,18 +1,40 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="tabbar">
+    <router-view></router-view>
+    <tab-bar>
+      <tab-item path="/index" activeColor="blue">
+        <img src="@/assets/icon/start.png" slot="item-icon" />
+        <img src="@/assets/icon/start1.png" slot="item-icon-active" />
+        <div slot="item-text">首页</div>
+      </tab-item>
+      <tab-item path="/selling" activeColor="blue">
+        <img src="@/assets/icon/selling.png" slot="item-icon" />
+        <img src="@/assets/icon/selling1.png" slot="item-icon-active" />
+        <div slot="item-text">卖书</div>
+      </tab-item>
+      <tab-item path="/card" activeColor="blue">
+        <img src="@/assets/icon/cart.png" slot="item-icon" />
+        <img src="@/assets/icon/cart1.png" slot="item-icon-active" />
+        <div slot="item-text">购物车</div>
+      </tab-item>
+      <tab-item path="/mine" activeColor="blue">
+        <img src="@/assets/icon/mine.png" slot="item-icon" />
+        <img src="@/assets/icon/mine1.png" slot="item-icon-active" />
+        <div slot="item-text">我的</div>
+      </tab-item>
+    </tab-bar>
   </div>
 </template>
-
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import TabItem from '@/components/tabbar/TabItem.vue'
+import TabBar from '@/components/tabbar/TabBar.vue'
 export default {
-  name: 'Home',
+  name: 'welcome',
   components: {
-    HelloWorld
+    TabBar,
+    TabItem
   }
 }
 </script>
+<style lang="scss" scoped>
+</style>
