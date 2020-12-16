@@ -10,7 +10,7 @@
       <tab-item path="/selling" activeColor="blue">
         <img src="@/assets/icon/selling.png" slot="item-icon" />
         <img src="@/assets/icon/selling1.png" slot="item-icon-active" />
-        <div slot="item-text">卖书</div>
+        <div slot="item-text">活动</div>
       </tab-item>
       <tab-item path="/card" activeColor="blue">
         <img src="@/assets/icon/cart.png" slot="item-icon" />
