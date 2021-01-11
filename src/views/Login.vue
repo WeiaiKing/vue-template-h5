@@ -5,37 +5,20 @@
       <div class="avatar-img">
         <img src="../assets/logo.png" alt />
       </div>
-      <div @click="submitForm('login_form')">登录</div>
-      <div>重置</div>
-      <!-- 登录表单 -->
-      <!-- <el-form
-        class="login-form"
-        :rules="rules"
-        ref="login_form"
-        :model="login_form"
-      >
-        <el-form-item prop="username">
-          <el-input
-            prefix-icon="el-icon-user-solid"
-            v-model="login_form.username"
-          ></el-input>
-        </el-form-item>
-        <el-form-item prop="password">
-          <el-input
-            prefix-icon="el-icon-discount"
-            v-model="login_form.password"
-            show-password
-          ></el-input>
-        </el-form-item>
-        <el-form-item class="btns">
-          <el-button type="primary" @click="submitForm('login_form')"
-            >登录</el-button
-          >
-          <el-button type="info" @click="resetForm('login_form')"
-            >重置</el-button
-          >
-        </el-form-item>
-      </el-form> -->
+      <section class="login-form">
+        <div class="input-box">
+          <div class="flex mt-30">
+            <span>账号:</span>
+            <input type="text" placeholder="请输入账号" />
+          </div>
+          <div class="flex mt-30">
+            <span>密码:</span>
+            <input type="password" placeholder="请输入密码" />
+          </div>
+        </div>
+        <div @click="submitForm('login_form')" class="text-right">登录</div>
+        <div class="text-right">重置</div>
+      </section>
     </div>
   </div>
 </template>
@@ -126,42 +109,49 @@ export default {
   height: 100vh;
 }
 .login-box {
-  width: 450px;
-  height: 300px;
-  background-color: #fff;
-  border-radius: 3px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   .avatar-img {
     border: 1px solid #eee;
     border-radius: 50%;
-    height: 130px;
-    width: 130px;
-    padding: 10px;
-    box-shadow: 0 0 10px #ddd;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: 10rem;
+    width: 10rem;
+    padding: 0.6rem;
+    box-shadow: 0 0 5px #ddd;
     background-color: #fff;
   }
   img {
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    background-color: #eee;
   }
 }
-.login-form {
-  position: absolute;
-  bottom: 0;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0 20px;
+.mt-30 {
+  margin-top: 3rem;
 }
-.btns {
-  display: flex;
-  justify-content: flex-end;
+.text-right {
+  width: 6rem;
+  text-align: right;
+  font-size: 20px;
+  background: rosybrown;
+}
+.input-box {
+  width: 15rem;
+  & input {
+    width: 100%;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+  }
+  & span {
+    width: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    background: #fff;
+  }
 }
 </style>
